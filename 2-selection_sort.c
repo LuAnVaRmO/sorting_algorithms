@@ -1,25 +1,26 @@
 #include "sort.h"
 /**
- * bubble_sort - Entry point
+ * selection_sort - Entry Point
  * @array: array to sort
- * @size: size of the array
- * Return: sorted list
+ * @size: size of array
+ * Return: void
  */
-void bubble_sort(int *array, size_t size)
+void selection_sort(int *array, size_t size)
 {
-	size_t i, j, k, s_temp;
+	size_t i, j;
+	int min = 0;
 
-	s_temp = size;
-	for (i = 0; i < s_temp; s_temp--)
+	for (i = 0; i < size - 1; i++)
 	{
-		k = i;
-		for (j = k + 1; j < s_temp; j++, k++)
+		min = i;
+		for (j = i + 1; j < size; j++)
 		{
-			if (array[k] > array[j])
+			if (array[j] < array[min])
 			{
-				swap(array, k, j, size);
+				min = j;
 			}
 		}
+		swap(array, i, min, size);
 	}
 }
 

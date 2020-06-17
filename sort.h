@@ -28,5 +28,7 @@ int our_partition(int *array, int low, int high, size_t size);
 void our_sort(int *array, int low, int high, size_t size);
 void quick_sort(int *array, size_t size);
 void swap_back(listint_t **list, listint_t *low, listint_t *high);
+void shell_sort(int *array, size_t size);
+int get_gap(size_t size);
 
 #endif /* _SORT_H */

@@ -7,15 +7,10 @@
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	int low, high;
-
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
 
-	low = 0;
-	high = (int)size - 1;
-
-	our_quick_sort(array, low, high, size);
+	our_quick_sort(array, 0, size - 1, size);
 }
 
 /**
@@ -62,16 +57,14 @@ int hoare_partition(int *arr, int low, int high, size_t size)
 	while (a)
 	{
 		/**
-		 * Find leftmost element greater than
-		 * or equal to pivot
+		 * Find leftmost element greater than or equal to pivot
 		 */
 		do {
 			i++;
 		} while (arr[i] < pivot);
 
 		/**
-		 * Find rightmost element smaller than
-		 * or equal to pivot
+		 * Find rightmost element smaller than  or equal to pivot
 		 */
 		do {
 			j--;

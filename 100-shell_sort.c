@@ -35,13 +35,13 @@ void shell_sort(int *array, size_t size)
  */
 int get_gap(size_t size)
 {
-	size_t g;
+	size_t gap;
 
-	g = 1;
-	while (g < size)
+	gap = 1;
+	while (gap < size)
 	{
-		g *= 3 + 1;
+		gap = (gap * 3) + 1;
 	}
-	g /= 3;
-	return (g);
+	gap = (gap - 1) / 3;
+	return (gap);
 }

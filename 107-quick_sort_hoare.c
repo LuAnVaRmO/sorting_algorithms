@@ -9,6 +9,9 @@ void quick_sort_hoare(int *array, size_t size)
 {
 	int low, high;
 
+	if (!array || !size)
+		return;
+
 	low = 0;
 	high = (int)size - 1;
 
